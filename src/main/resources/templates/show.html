@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>This is my show page</h1>
+</body>
+<form th:action="@{/show}" method="get">
+<div align="center"> 
+            <table border="1" cellpadding="5">
+            <caption><h2>List of users</h2></caption>
+       <tr> 
+         <th>Id</th> 
+         <th>Name</th> 
+         <th>Email</th> 
+         <th>Mobile</th>
+         <th>Action</th> 
+       </tr> 
+       <tr th:each="user : ${list1}">        
+        <td th:text="${user.id}"></td> 
+       <td th:text="${user.name}"></td>
+       <td th:text="${user.email}"></td> 
+       <td th:text="${user.mobile}"></td> 
+<!--        <td><a th:href="/editui/${user.id}">Edit</a> -->
+<!--                  <a th:href="/user/delete/${user.id}">Delete</a> -->
+<!--                  </td> -->
+       </tr>
+           </table> 
+   </div>
+</form>
+</html>
